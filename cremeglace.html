@@ -7,38 +7,255 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&display=swap');
         .tailwind-ready { font-family: 'Inter', system_ui, sans-serif; }
         .heading-font { font-family: 'Playfair Display', sans-serif; }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
     </style>
 </head>
 <body class="tailwind-ready bg-stone-50">
+
     <div class="max-w-7xl mx-auto px-6 py-12">
-        <a href="index.html" class="inline-flex items-center gap-2 mb-10 text-amber-700 hover:text-amber-800 font-medium">← Retour</a>
-        <h1 class="heading-font text-5xl font-bold text-center mb-12">Nos Crèmes Glacées Artisanales</h1>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
-                <img src="https://picsum.photos/id/451/600/400" class="w-full h-56 object-cover" alt="Pistache">
-                <div class="p-6"><h3 class="font-semibold text-xl">Pistache</h3><p class="text-3xl font-bold text-amber-700 mt-6">5,99 $</p></div>
+        <a href="index.html" class="inline-flex items-center gap-2 mb-10 text-amber-700 hover:text-amber-800 font-medium">
+            ← Retour
+        </a>
+
+        <h1 class="heading-font text-5xl font-bold text-center mb-12 text-amber-900">
+            Nos Crèmes Glacées Artisanales
+        </h1>
+
+        <!-- ====================== SECTION BOULES ====================== -->
+        <section class="mb-20">
+            <h2 class="heading-font text-4xl font-semibold text-amber-800 mb-10 flex items-center gap-3">
+                <i class="fa-solid fa-ice-cream text-3xl"></i>
+                Boules de Crème Glacée
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Parfum 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/451/600/400" class="w-full h-56 object-cover" alt="Pistache">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Pistache</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">5,49 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">7,49 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">9,49 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parfum 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/292/600/400" class="w-full h-56 object-cover" alt="Eau de Rose">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Eau de Rose</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">5,29 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">7,29 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">9,29 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parfum 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/1080/600/400" class="w-full h-56 object-cover" alt="Mahalabia">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Mahalabia</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">5,49 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">7,49 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">9,49 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parfum 4 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/133/600/400" class="w-full h-56 object-cover" alt="Kunafa">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Kunafa Crunch</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">5,99 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">7,99 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">10,49 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parfum 5 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/312/600/400" class="w-full h-56 object-cover" alt="Noix">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Mélange de Noix</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">5,79 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">7,79 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">9,99 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parfum 6 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/201/600/400" class="w-full h-56 object-cover" alt="Safran">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Safran & Miel</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">6,29 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">8,49 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">10,99 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parfum 7 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/870/600/400" class="w-full h-56 object-cover" alt="Chocolat">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Chocolat Noir</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">5,49 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">7,49 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">9,49 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parfum 8 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/669/600/400" class="w-full h-56 object-cover" alt="Fleur d'oranger">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Fleur d'Oranger</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">5,39 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">7,39 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">9,39 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
-                <img src="https://picsum.photos/id/292/600/400" class="w-full h-56 object-cover" alt="Rose">
-                <div class="p-6"><h3 class="font-semibold text-xl">Eau de Rose</h3><p class="text-3xl font-bold text-amber-700 mt-6">5,79 $</p></div>
+        </section>
+
+        <!-- ====================== SECTION CORNETS ====================== -->
+        <section>
+            <h2 class="heading-font text-4xl font-semibold text-amber-800 mb-10 flex items-center gap-3">
+                <i class="fa-solid fa-cone text-3xl"></i>
+                Cornets
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Même 8 parfums pour les cornets (prix légèrement plus élevés) -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/451/600/400" class="w-full h-56 object-cover" alt="Pistache">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Pistache</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">6,49 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">8,49 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">10,99 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/292/600/400" class="w-full h-56 object-cover" alt="Eau de Rose">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Eau de Rose</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">6,29 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">8,29 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">10,79 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/1080/600/400" class="w-full h-56 object-cover" alt="Mahalabia">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Mahalabia</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">6,49 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">8,49 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">10,99 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/133/600/400" class="w-full h-56 object-cover" alt="Kunafa">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Kunafa Crunch</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">6,99 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">9,29 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">11,99 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/312/600/400" class="w-full h-56 object-cover" alt="Noix">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Mélange de Noix</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">6,79 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">8,79 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">11,49 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/201/600/400" class="w-full h-56 object-cover" alt="Safran">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Safran & Miel</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">7,29 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">9,49 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">12,49 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/870/600/400" class="w-full h-56 object-cover" alt="Chocolat">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Chocolat Noir</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">6,49 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">8,49 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">10,99 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
+                    <img src="https://picsum.photos/id/669/600/400" class="w-full h-56 object-cover" alt="Fleur d'oranger">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-2xl mb-4">Fleur d'Oranger</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between"><span class="text-gray-600">Petit</span><span class="font-bold text-amber-700">6,39 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Moyen</span><span class="font-bold text-amber-700">8,39 $</span></div>
+                            <div class="flex justify-between"><span class="text-gray-600">Grand</span><span class="font-bold text-amber-700">10,79 $</span></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
-                <img src="https://picsum.photos/id/1080/600/400" class="w-full h-56 object-cover" alt="Mahalabia">
-                <div class="p-6"><h3 class="font-semibold text-xl">Mahalabia</h3><p class="text-3xl font-bold text-amber-700 mt-6">5,99 $</p></div>
-            </div>
-            <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
-                <img src="https://picsum.photos/id/133/600/400" class="w-full h-56 object-cover" alt="Kunafa">
-                <div class="p-6"><h3 class="font-semibold text-xl">Kunafa Crunch</h3><p class="text-3xl font-bold text-amber-700 mt-6">6,49 $</p></div>
-            </div>
-            <div class="bg-white rounded-3xl overflow-hidden shadow card-hover">
-                <img src="https://picsum.photos/id/312/600/400" class="w-full h-56 object-cover" alt="Noix">
-                <div class="p-6"><h3 class="font-semibold text-xl">Mélange de Noix</h3><p class="text-3xl font-bold text-amber-700 mt-6">6,29 $</p></div>
-            </div>
-        </div>
+        </section>
+
     </div>
 </body>
 </html>
