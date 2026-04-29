@@ -51,7 +51,16 @@
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
         }
 
-        /* Barre de liens rapides sticky en bas sur mobile */
+        /* Liens rapides sticky en haut */
+        .quick-links-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        /* Barre de liens rapides sticky en bas sur mobile (conservée) */
         .quick-links-bar {
             position: fixed;
             bottom: 0;
@@ -74,20 +83,20 @@
 <body class="tailwind-ready">
 
     <!-- NAVBAR -->
-<nav id="navbar" class="bg-[#d4af77] text-stone-900 sticky top-0 z-50 shadow-md">
-    <div class="max-w-7xl mx-auto">
-        <div class="px-6 py-5 flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex items-center gap-3">
-                <img src="images/logo.jpeg" 
-                     alt="Logo Pâtisserie Syrienne" 
-                     class="w-12 h-12 object-contain rounded-2xl shadow-inner">
-                
-                <div>
-                    <h1 class="heading-font text-3xl font-bold tracking-tighter">Pâtisserie Syrienne</h1>
-                    <p class="text-xs -mt-1 text-stone-700 font-medium">Sherbrooke</p>
+    <nav id="navbar" class="bg-[#d4af77] text-stone-900 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto">
+            <div class="px-6 py-5 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <img src="images/logo.jpeg" 
+                         alt="Logo Pâtisserie Syrienne" 
+                         class="w-12 h-12 object-contain rounded-2xl shadow-inner">
+                    
+                    <div>
+                        <h1 class="heading-font text-3xl font-bold tracking-tighter">Pâtisserie Syrienne</h1>
+                        <p class="text-xs -mt-1 text-stone-700 font-medium">Sherbrooke</p>
+                    </div>
                 </div>
-            </div>
 
                 <!-- Menu Desktop -->
                 <div class="hidden md:flex items-center gap-8 text-lg font-medium">
@@ -100,20 +109,17 @@
 
                 <!-- Actions -->
                 <div class="flex items-center gap-4">
-                    <!-- Téléphone -->
                     <a href="tel:8194327907" 
                        class="flex items-center gap-2 bg-white text-stone-900 px-5 py-2.5 rounded-3xl font-semibold hover:bg-amber-100">
                         <i class="fa-solid fa-phone"></i>
                         <span class="hidden sm:inline">819 432-7907</span>
                     </a>
 
-                    <!-- Uber Eats plus petit -->
                     <a href="https://www.ubereats.com/ca-fr/store/patisserie-syrienne-840-rue-king-ouest/S_bv2mO3X7mJnsnw7Ocvcg?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjc4NyUyMFJ1ZSUyMENoYXBsZWF1JTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyYWZjZmEzYzEtYTcxYS1jODM2LTRkMjQtZGY3NTgxMDg1MjFlJTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMnViZXJfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0E0NS4zODc2NyUyQyUyMmxvbmdpdHVkZSUyMiUzQS03MS44OTc2MTc1JTdE&ps=1&sc=SEARCH_SUGGESTION" target="_blank"
                        class="flex items-center gap-2 bg-[#00A082] text-white px-4 py-2 rounded-3xl font-semibold hover:bg-[#008c6f] text-sm">
                         <i class="fa-solid fa-motorcycle"></i>
                         <span class="hidden sm:inline">Uber Eats</span>
                     </a>
-                    <!-- Menu Mobile -->
                     <button onclick="toggleMobileMenu()" class="md:hidden w-11 h-11 flex items-center justify-center text-3xl">
                         <i id="mobile-icon" class="fa-solid fa-bars"></i>
                     </button>
@@ -122,79 +128,106 @@
         </div>
     </nav>
 
-        <!-- HERO DIAPORAMA -->
-        <section id="accueil" class="relative h-screen">
-            <div id="hero-slider" class="relative h-full overflow-hidden">
-                <!-- Slides -->
-                <div class="hero-slide absolute inset-0 flex items-center justify-center" id="slide-1">
-                    <img src="images/f1.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
-                </div>
-                <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-2">
-                    <img src="images/f2.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
-                </div>
-                <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-3">
-                    <img src="images/f3.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
-                </div>
-                <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-4">
-                    <img src="images/f4.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
-                </div>
-                <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-5">
-                    <img src="images/f5.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
-                </div>
-                <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-6">
-                    <img src="images/f6.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
-                </div>
-                <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-7">
-                    <img src="images/f7.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
-                </div>
-                <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-8">
-                    <img src="images/f8.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
-                </div>
-                <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-9">
-                    <img src="images/f9.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
-                </div>
-                <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-10">
-                    <img src="images/f10.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+    <!-- LIENS RAPIDES STICKY EN HAUT - CENTRÉS ET CÔTE À CÔTE -->
+    <div class="quick-links-sticky bg-white border-b">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-center gap-8 text-sm font-medium text-stone-700">
+                <a href="#menu" class="flex items-center gap-2 hover:text-amber-700">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>Menu</span>
+                </a>
+                <a href="#contact" class="flex items-center gap-2 hover:text-amber-700">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Adresse</span>
+                </a>
+                <a href="tel:8194327907" class="flex items-center gap-2 hover:text-amber-700">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Appeler</span>
+                </a>
+                <a href="https://www.ubereats.com/ca-fr/store/patisserie-syrienne-840-rue-king-ouest/S_bv2mO3X7mJnsnw7Ocvcg?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjc4NyUyMFJ1ZSUyMENoYXBsZWF1JTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyYWZjZmEzYzEtYTcxYS1jODM2LTRkMjQtZGY3NTgxMDg1MjFlJTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMnViZXJfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0E0NS4zODc2NyUyQyUyMmxvbmdpdHVkZSUyMiUzQS03MS44OTc2MTc1JTdE&ps=1&sc=SEARCH_SUGGESTION" 
+                   target="_blank" 
+                   class="flex items-center gap-2 text-[#00A082] hover:text-[#008c6f]">
+                    <i class="fa-solid fa-motorcycle"></i>
+                    <span>Uber Eats</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO DIAPORAMA -->
+    <section id="accueil" class="relative h-screen">
+        <div id="hero-slider" class="relative h-full overflow-hidden">
+            <!-- Slides (inchangés) -->
+            <div class="hero-slide absolute inset-0 flex items-center justify-center" id="slide-1">
+                <img src="images/f1.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+            </div>
+            <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-2">
+                <img src="images/f2.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+            </div>
+            <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-3">
+                <img src="images/f3.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+            </div>
+            <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-4">
+                <img src="images/f4.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+            </div>
+            <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-5">
+                <img src="images/f5.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+            </div>
+            <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-6">
+                <img src="images/f6.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+            </div>
+            <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-7">
+                <img src="images/f7.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+            </div>
+            <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-8">
+                <img src="images/f8.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+            </div>
+            <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-9">
+                <img src="images/f9.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+            </div>
+            <div class="hero-slide absolute inset-0 flex items-center justify-center hidden" id="slide-10">
+                <img src="images/f10.jpeg" alt="Pâtisserie Syrienne" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+            </div>
+        </div>
+
+        <!-- Overlay Content -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-6">
+            <div class="max-w-3xl">
+                <h1 class="heading-font text-6xl md:text-7xl font-bold text-white leading-none mb-4 drop-shadow-2xl">
+                    Pâtisserie Syrienne
+                </h1>
+                <p class="text-3xl md:text-4xl text-amber-200 font-light mb-8">Les saveurs authentiques de la Syrie à Sherbrooke</p>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#menu" 
+                       class="bg-white text-stone-900 px-10 py-5 rounded-3xl text-xl font-semibold flex items-center gap-3 hover:bg-amber-100">
+                        <i class="fa-solid fa-cake-candles"></i>
+                        Voir le menu complet
+                    </a>
+                    <a href="https://www.ubereats.com/ca-fr/store/patisserie-syrienne-840-rue-king-ouest/S_bv2mO3X7mJnsnw7Ocvcg?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjc4NyUyMFJ1ZSUyMENoYXBsZWF1JTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyYWZjZmEzYzEtYTcxYS1jODM2LTRkMjQtZGY3NTgxMDg1MjFlJTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMnViZXJfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0E0NS4zODc2NyUyQyUyMmxvbmdpdHVkZSUyMiUzQS03MS44OTc2MTc1JTdE&ps=1&sc=SEARCH_SUGGESTION" target="_blank"
+                       class="border-2 border-white text-white px-6 py-3.5 rounded-3xl text-base font-semibold flex items-center gap-2 hover:bg-white/10">
+                        <i class="fa-solid fa-motorcycle"></i>
+                        <span>Commander sur Uber Eats</span>
+                    </a>
                 </div>
             </div>
+        </div>
 
-            <!-- Overlay Content -->
-            <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-6">
-                <div class="max-w-3xl">
-                    <h1 class="heading-font text-6xl md:text-7xl font-bold text-white leading-none mb-4 drop-shadow-2xl">
-                        Pâtisserie Syrienne
-                    </h1>
-                    <p class="text-3xl md:text-4xl text-amber-200 font-light mb-8">Les saveurs authentiques de la Syrie à Sherbrooke</p>
-                    
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <a href="#menu" 
-                           class="bg-white text-stone-900 px-10 py-5 rounded-3xl text-xl font-semibold flex items-center gap-3 hover:bg-amber-100">
-                            <i class="fa-solid fa-cake-candles"></i>
-                            Voir le menu complet
-                        </a>
-                        <a href="https://www.ubereats.com/ca-fr/store/patisserie-syrienne-840-rue-king-ouest/S_bv2mO3X7mJnsnw7Ocvcg?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjc4NyUyMFJ1ZSUyMENoYXBsZWF1JTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyYWZjZmEzYzEtYTcxYS1jODM2LTRkMjQtZGY3NTgxMDg1MjFlJTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMnViZXJfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0E0NS4zODc2NyUyQyUyMmxvbmdpdHVkZSUyMiUzQS03MS44OTc2MTc1JTdE&ps=1&sc=SEARCH_SUGGESTION" target="_blank"
-                           class="border-2 border-white text-white px-6 py-3.5 rounded-3xl text-base font-semibold flex items-center gap-2 hover:bg-white/10">
-                            <i class="fa-solid fa-motorcycle"></i>
-                            <span>Commander sur Uber Eats</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <!-- Dots -->
+        <div id="dots" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20"></div>
+    </section>
 
-            <!-- Dots -->
-            <div id="dots" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20"></div>
-        </section>
-
+    <!-- Le reste du code est identique à ce que tu as fourni (À PROPOS, MENU, GALERIE, TÉMOIGNAGES, CONTACT, FOOTER) -->
     <!-- À PROPOS -->
     <section id="apropos" class="py-20 bg-stone-50">
         <div class="max-w-7xl mx-auto px-6">
@@ -237,7 +270,6 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <!-- Tes catégories originales restent intactes -->
                 <a href="dessert.html" class="category-card bg-white border border-stone-100 rounded-3xl overflow-hidden card-hover block">
                     <img src="images/dessert.jpeg" alt="Desserts Syriens" class="w-full h-56 object-cover">
                     <div class="p-6 text-center">
@@ -317,36 +349,28 @@
                     <p class="italic text-stone-600">"Le meilleur baklava que j’ai mangé hors de Syrie ! La pistache est fraîche et le sirop parfait."</p>
                     <div class="mt-8 flex items-center gap-4">
                         <div class="w-12 h-12 bg-amber-200 rounded-2xl"></div>
-                        <div>
-                            <p class="font-semibold">Sarah A.</p>
-                        </div>
+                        <div><p class="font-semibold">Sarah A.</p></div>
                     </div>
                 </div>
                 <div class="bg-white p-8 rounded-3xl shadow">
-                    <p class="italic text-stone-600">"La kunafa est incroyable. Livraison Uber Eats ultra rapide et toujours chaude. Merci !" </p>
+                    <p class="italic text-stone-600">"La kunafa est incroyable. Livraison Uber Eats ultra rapide et toujours chaude. Merci !"</p>
                     <div class="mt-8 flex items-center gap-4">
                         <div class="w-12 h-12 bg-emerald-200 rounded-2xl"></div>
-                        <div>
-                            <p class="font-semibold">Mohamed K.</p>
-                        </div>
+                        <div><p class="font-semibold">Mohamed K.</p></div>
                     </div>
                 </div>
                 <div class="bg-white p-8 rounded-3xl shadow">
                     <p class="italic text-stone-600">"Maamoul et halawet el jibn parfaits pour la fête de famille. Tout le monde a adoré !"</p>
                     <div class="mt-8 flex items-center gap-4">
                         <div class="w-12 h-12 bg-purple-200 rounded-2xl"></div>
-                        <div>
-                            <p class="font-semibold">Lina B.</p>
-                        </div>
+                        <div><p class="font-semibold">Lina B.</p></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- Barre Liens Rapides Sticky (visible seulement sur mobile) -->
+    <!-- Barre Liens Rapides Sticky en bas sur mobile (conservée) -->
     <div class="quick-links-bar">
         <div class="flex justify-around items-center text-xs font-medium text-stone-700">
             <a href="#menu" class="flex flex-col items-center gap-1">
@@ -402,17 +426,14 @@
                 <div class="rounded-3xl overflow-hidden shadow-2xl min-h-[450px]">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.0000000000005!2d-71.905!3d45.400!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc92b0f0f0f0f0f%3A0xabcdef1234567890!2s840+Rue+King+Ouest%2C+Sherbrooke%2C+QC+J1H+1S1!5e0!3m2!1sfr!2sca!4v1234567890" 
-                        width="100%" 
-                        height="450" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy">
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
             </div>
         </div>
     </section>
-        <!-- Liens Rapides en bas de page -->
+
+    <!-- Liens Rapides en bas de page (conservé tel quel) -->
     <div class="bg-amber-50 py-12 border-t">
         <div class="max-w-7xl mx-auto px-6">
             <p class="text-center text-amber-800 font-medium mb-6">Liens rapides</p>
@@ -437,6 +458,7 @@
             </div>
         </div>
     </div>
+
     <!-- FOOTER -->
     <footer class="bg-stone-900 text-white py-16">
         <div class="max-w-7xl mx-auto px-6">
